@@ -1,0 +1,36 @@
+services:
+  cobblemon:
+    image: itzg/minecraft-server:java21
+    container_name: cobblemon
+    tty: true
+    stdin_open: true
+    ports:
+      - "25569:25565"
+      - "25579:25575"
+    environment:
+      # Performance Settings
+      EULA: "true"
+      MEMORY: "4G"
+      MAX_MEMORY: "12G"
+      RCON_PASSWORD: "password"
+
+      # CURSEFORGE
+      # MOD_PLATFORM: AUTO_CURSEFORGE
+      # # allocate from https://console.curseforge.com/ and set in .env file
+      # CF_API_KEY: ${CF_API_KEY}
+      # CF_PAGE_URL: https://www.curseforge.com/minecraft/modpacks/the-pixelmon-modpack
+      # # Optional: select a specific version/file
+      # CF_FILENAME_MATCHER: "9.2.8"
+
+      # MODRINTH
+      MOD_PLATFORM: MODRINTH
+      MODRINTH_MODPACK: https://modrinth.com/modpack/cobblemon-fabric/version/1.7.1
+
+      # Server Settings
+      DUMP_SERVER_PROPERTIES: "true"
+      OVERRIDE_SERVER_PROPERTIES: "false"
+
+    volumes:
+      - ./data:/data
+      - ./downloads:/downloads
+    restart: "no"

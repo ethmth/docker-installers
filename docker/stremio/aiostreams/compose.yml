@@ -1,0 +1,30 @@
+services:
+  aiostreams:
+    image: ghcr.io/viren070/aiostreams:latest
+    container_name: aiostreams
+    ports:
+      - "0.0.0.0:4001:3000/tcp"
+    environment:
+      - BASE_URL=https://YOUR_PUBLIC_AIO_HOSTNAME
+      - ADDON_PASSWORD=password
+      - ADDON_PROXY=http://host.docker.internal:8888
+      - SECRET_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef # change me
+      - REGEX_FILTER_ACCESS=all
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./aio-data:/app/data
+    restart: no
+
+  mediaflow-proxy:
+    image: mhdzumair/mediaflow-proxy
+    container_name: mediaflow-proxy
+    ports:
+      - "0.0.0.0:4002:8888/tcp"
+    environment:
+      - API_PASSWORD=password
+      - PROXY_URL=http://host.docker.internal:8888
+      - ALL_PROXY=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: no

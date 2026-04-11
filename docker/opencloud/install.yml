@@ -1,0 +1,15 @@
+install:
+  name: opencloud
+  location: $HOME
+  volumes:
+    - ./opencloud/opencloud-config
+    - ./opencloud/opencloud-data
+  files:
+    - compose.yml
+  messages:
+    - "Initialize opencloud (first time setup):"
+    - "docker compose --profile init run --rm opencloud-init"
+    - "Then, run docker compose up"
+    - "Login as admin:admin, then create a space called 'space'"
+    - "Then, uncomment the line in the docker compose mounting your storage."
+    - "Note: If you have mounted the storage to an opencloud instance before, you may have to clear the POSIX attributes with remove_oc_attributes_rec.sh"

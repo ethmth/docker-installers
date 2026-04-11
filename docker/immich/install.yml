@@ -1,0 +1,10 @@
+install:
+  name: immich
+  location: $HOME
+  autostart: false
+  volumes:
+    - ./library
+    - ./postgres
+  files:
+    - compose.yml
+    - immich.json

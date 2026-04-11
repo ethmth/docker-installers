@@ -1,0 +1,18 @@
+install:
+  name: caddy
+  location: /opt
+  root: true
+  volumes:
+    - html
+    - caddy.d
+    - caddy_data
+    - caddy_config
+    - certs
+  files:
+    - compose.yml
+    - Caddyfile
+    - caddy.d
+    - html
+    - Dockerfile
+  messages:
+    - "You may need to docker pull caddy:latest manually"

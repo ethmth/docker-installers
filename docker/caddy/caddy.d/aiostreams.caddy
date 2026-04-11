@@ -1,0 +1,44 @@
+aiostreams.YOURDOMAIN.COM {
+
+    # Handle ACME challenge (not strictly necessary, but harmless if you want compatibility)
+    handle_path /.well-known/acme-challenge/* {
+        root * /var/www/certbot
+        file_server
+    }
+
+    # Reverse proxy to aiostreams
+    reverse_proxy http://host.docker.internal:4001 {
+        header_up Connection "Upgrade"
+        header_up Upgrade {http.request.header.Upgrade}
+        header_up Host {http.request.host}
+        header_up X-Real-IP {http.request.remote}
+        header_up X-Forwarded-For {http.request.remote}
+        header_up X-Forwarded-Proto {http.request.scheme}
+        header_up X-Forwarded-Host {http.request.host}
+    }
+
+    encode gzip
+}
+
+mediaflow.YOURDOMAIN.COM {
+
+    # Handle ACME challenge (not strictly necessary, but harmless if you want compatibility)
+    handle_path /.well-known/acme-challenge/* {
+        root * /var/www/certbot
+        file_server
+    }
+
+    # Reverse proxy to mediaflow-proxy
+    reverse_proxy http://host.docker.internal:4002 {
+        header_up Connection "Upgrade"
+        header_up Upgrade {http.request.header.Upgrade}
+        header_up Host {http.request.host}
+        header_up X-Real-IP {http.request.remote}
+        header_up X-Forwarded-For {http.request.remote}
+        header_up X-Forwarded-Proto {http.request.scheme}
+        header_up X-Forwarded-Host {http.request.host}
+    }
+
+    encode gzip
+}
+

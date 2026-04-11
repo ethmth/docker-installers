@@ -1,0 +1,11 @@
+install:
+  name: aiostreams
+  location: $HOME
+  autostart: true
+  volumes:
+  - aio-data
+  files:
+  - compose.yml
+  messages:
+  - "Set aiostreams BASE_URL, ADDON_PASSWORD, SECRET_KEY (openssl rand -hex 32) in compose.yml"
+  - "Set mediaflow-proxy API_PASSWORD in compose.yml"

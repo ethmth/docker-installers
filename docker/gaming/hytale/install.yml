@@ -1,0 +1,9 @@
+install:
+  name: hytale
+  location: $HOME
+  root: false
+  autostart: true
+  volumes:
+  - ./data
+  files:
+  - compose.yml

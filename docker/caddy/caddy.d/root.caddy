@@ -1,0 +1,12 @@
+YOURDOMAIN.COM {
+    
+    # Optionally serve ACME challenge manually — Caddy usually handles this itself
+    handle_path /.well-known/acme-challenge/* {
+        root * /var/www/certbot
+        file_server
+    }
+
+    # Serve static site over HTTPS
+    root * /usr/share/html
+    file_server
+}

@@ -1,0 +1,7 @@
+install:
+  name: gate
+  location: $HOME
+  my-docker-program: true
+  files:
+  - compose.yml
+  - config.yml

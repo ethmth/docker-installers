@@ -1,0 +1,16 @@
+# import /etc/caddy/caddy.d/root.caddy
+# import /etc/caddy/caddy.d/bluebubbles2.caddy
+# import /etc/caddy/caddy.d/gitea.caddy
+# import /etc/caddy/caddy.d/pitchwizard.caddy
+# import /etc/caddy/caddy.d/valvopes.caddy
+# import /etc/caddy/caddy.d/aiostreams.caddy
+# import /etc/caddy/caddy.d/minio.caddy
+# import /etc/caddy/caddy.d/jellyfin.caddy
+
+
+## Local Configs
+## If you're enabling local configs, be sure to add the certs to the certs volume.
+# import /etc/caddy/caddy.d/internal/immich.caddy
+# import /etc/caddy/caddy.d/internal/magic-mich.caddy
+# import /etc/caddy/caddy.d/internal/magic-mich-dev.caddy
+# import /etc/caddy/caddy.d/internal/dev.caddy

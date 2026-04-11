@@ -1,0 +1,25 @@
+minio.YOURDOMAIN.COM {
+    # Handle ACME challenge (not strictly necessary, but harmless if you want compatibility)
+    handle_path /.well-known/acme-challenge/* {
+        root * /var/www/certbot
+        file_server
+    }
+
+    handle /minio/ui/* {
+        uri strip_prefix /minio/ui
+        reverse_proxy host.docker.internal:9001
+    }
+
+    handle /robots.txt {
+        respond "User-agent: *
+        Disallow: /"
+    }
+
+    handle /favicon.ico {
+        respond 404
+    }
+
+    handle /* {
+        reverse_proxy host.docker.internal:9000
+    }
+}

@@ -1,0 +1,10 @@
+install:
+  name: jellyfin
+  location: $HOME
+  autostart: true
+  volumes:
+    - ./config
+  files:
+    - compose.yml
+  messages:
+    - "Set your media directories(s) in compose.yml, or use /opt/media"

@@ -1,0 +1,10 @@
+install:
+  name: minio
+  location: $HOME
+  autostart: true
+  volumes:
+  - minio_data
+  files:
+  - compose.yml
+  messages:
+  - "Set minio MINIO_ROOT_USER, MINIO_ROOT_PASSWORD, MINIO_SERVER_URL, MINIO_BROWSER_REDIRECT_URL in compose.yml"

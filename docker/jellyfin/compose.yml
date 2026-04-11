@@ -1,0 +1,37 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    restart: no
+    ports:
+      # Web UI port
+      - "0.0.0.0:8096:8096"
+      # # HTTPS port (optional, for direct SSL)
+      # - "8920:8920"
+      # # Service discovery ports
+      # - "7359:7359/udp"
+      # - "1900:1900/udp"
+    volumes:
+      # Jellyfin configuration and metadata
+      - ./config:/config
+      # # Transcoding temporary directory - use fast storage
+      # - /tmp/jellyfin-cache:/cache
+      # Mount your media directories(s) as read-only
+      - /opt/media:/media:ro
+
+    ## FOR GPU ACCELERATION:
+    user: USER_ID_HERE:GROUP_ID_HERE
+    group_add:
+      - "RENDER_ID_HERE" # Change this to match your "render" host group id and remove this comment
+      - "VIDEO_ID_HERE" # Change this to match your "video" host group id and remove this comment
+    # devices:
+    #   # Pass through the Intel GPU render device (handled by install.sh)
+    #   - /dev/dri/renderD128:/dev/dri/renderD128
+
+    ## ENVIRONMENT VARIABLES:
+    environment: # Must be at the end of the file for install.sh
+      # Run as your user to avoid permission issues
+      - PUID=USER_ID_HERE
+      - PGID=GROUP_ID_HERE
+      # Set your timezone
+      - TZ=America/New_York

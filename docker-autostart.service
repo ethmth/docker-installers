@@ -1,0 +1,11 @@
+[Unit]
+Description=Run docker-autostart on user login
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/docker-autostart
+Environment="HOME=%h"
+
+[Install]
+WantedBy=default.target

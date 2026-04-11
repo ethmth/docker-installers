@@ -1,0 +1,35 @@
+services:
+  opencloud-init:
+    image: opencloudeu/opencloud-rolling:latest
+    profiles:
+      - init
+    volumes:
+      - ./opencloud/opencloud-config:/etc/opencloud
+      - ./opencloud/opencloud-data:/var/lib/opencloud
+    environment:
+      IDM_ADMIN_PASSWORD: "admin"
+    command: init
+
+  opencloud:
+    image: opencloudeu/opencloud-rolling:latest
+    container_name: opencloud
+    ports:
+      - "0.0.0.0:9200:9200"
+    volumes:
+      - ./opencloud/opencloud-config:/etc/opencloud
+      - ./opencloud/opencloud-data:/var/lib/opencloud
+      - ${HOME}/Pictures:/var/lib/opencloud/storage/users/projects/space/content:rw
+    environment:
+      IDM_ADMIN_PASSWORD: "admin"
+      OC_INSECURE: "true"
+      PROXY_HTTP_ADDR: 0.0.0.0:9200
+      OC_URL: https://localhost:9200
+      # OC_ADMIN_USER_ID: "1253db0b-94ad-4c42-b2cd-77b6012e4066"
+      OC_DISABLE_VERSIONING: "true"
+      STORAGE_USERS_DRIVER: "posix"
+      STORAGE_USERS_ID_CACHE_STORE: "nats-js-kv"
+      STORAGE_USERS_POSIX_WATCH_FS: "true"
+      STORAGE_USERS_POSIX_PERSONAL_SPACE_PATH_TEMPLATE: "users/{{.User.Username | lower}}"
+      STORAGE_USERS_POSIX_GENERAL_SPACE_PATH_TEMPLATE: 'projects/{{.SpaceName | replace " " "-" | lower}}'
+    user: root
+    restart: on-failure

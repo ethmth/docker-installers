@@ -1,0 +1,12 @@
+config:
+  lite:
+    enabled: true
+    routes:
+      - host: minecraft.ethanmt.com
+        backend: host.docker.internal:25566
+      - host: pixelmon.ethanmt.com
+        backend: host.docker.internal:25567
+      - host: modded.ethanmt.com
+        backend: host.docker.internal:25568
+      - host: cobblemon.ethanmt.com
+        backend: host.docker.internal:25569
