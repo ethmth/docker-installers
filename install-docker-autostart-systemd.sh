@@ -16,6 +16,7 @@ if ! [ -f "docker-autostart.service" ]; then
 fi
 
 mkdir -p "$HOME/.local/bin"
+mkdir -p "$HOME/.config/systemd/user"
 
 cp docker-autostart.sh "$HOME/.local/bin/docker-autostart"
 chmod 755 "$HOME/.local/bin/docker-autostart"
