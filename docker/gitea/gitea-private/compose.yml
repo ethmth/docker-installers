@@ -1,6 +1,6 @@
 services:
   gitea-private-db:
-    image: postgres:18-alpine
+    image: postgres:17
     container_name: gitea-private-db
     volumes:
       - ./postgres:/var/lib/postgresql/data
