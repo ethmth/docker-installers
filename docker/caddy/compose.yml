@@ -1,6 +1,7 @@
 services:
   caddy:
-    build: .
+    # build: . # uncomment if you want to use the local Dockerfile
+    image: caddy:latest
     container_name: caddy
     ports:
       - "80:80"

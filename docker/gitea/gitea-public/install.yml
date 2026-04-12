@@ -1,0 +1,9 @@
+install:
+  name: gitea-public
+  location: $HOME
+  autostart: true
+  volumes:
+    - ./gitea
+    - ./postgres
+  files:
+    - compose.yml
