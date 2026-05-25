@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: "UTC"
+      PGTZ: "UTC"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-db-data:/var/lib/postgresql
+    restart: "unless-stopped"

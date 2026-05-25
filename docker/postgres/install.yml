@@ -1,0 +1,7 @@
+install:
+  name: postgres
+  location: $HOME
+  volumes:
+    - ./postgres-db-data
+  files:
+    - compose.yml
