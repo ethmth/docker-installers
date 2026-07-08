@@ -19,8 +19,8 @@ services:
       # - ADMIN_USERNAME=admin            # create an admin user on first run with the given user/pass combo
       # - ADMIN_PASSWORD=SomeSecretPassword
       - ALLOWED_HOSTS=* # restrict this to only accept incoming traffic via specific domain name
-      - PUBLIC_INDEX=True # set to False to prevent anonymous users from viewing snapshot list
-      - PUBLIC_SNAPSHOTS=True # set to False to prevent anonymous users from viewing snapshot content
+      - PUBLIC_INDEX=False # set to False to prevent anonymous users from viewing snapshot list
+      - PUBLIC_SNAPSHOTS=False # set to False to prevent anonymous users from viewing snapshot content
       - PUBLIC_ADD_VIEW=False # set to True to allow anonymous users to submit new URLs to archive
       # - SEARCH_BACKEND_ENGINE=sonic       # tells ArchiveBox to use sonic container below for fast full-text search
       # - SEARCH_BACKEND_HOST_NAME=sonic
