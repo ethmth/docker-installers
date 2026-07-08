@@ -10,6 +10,7 @@
 # import /etc/caddy/caddy.d/aiostreams.caddy
 # import /etc/caddy/caddy.d/minio.caddy
 # import /etc/caddy/caddy.d/jellyfin.caddy
+# import /etc/caddy/caddy.d/archivebox.caddy
 
 ## Lenovo
 # import /etc/caddy/caddy.d/bluebubbles2.caddy
