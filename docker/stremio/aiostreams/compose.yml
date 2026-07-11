@@ -17,7 +17,7 @@ services:
     restart: no
 
   mediaflow-proxy:
-    image: mhdzumair/mediaflow-proxy
+    image: mhdzumair/mediaflow-proxy:latest
     container_name: mediaflow-proxy
     ports:
       - "0.0.0.0:4002:8888/tcp"

@@ -1,0 +1,32 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun:latest
+    container_name: gluetun
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    environment:
+      - VPN_SERVICE_PROVIDER=custom
+      - VPN_TYPE=wireguard
+      - HTTPPROXY=on
+      - SHADOWSOCKS=on
+    ports:
+      - "0.0.0.0:8888:8888/tcp" # HTTP proxy
+      - "0.0.0.0:1080:1080/tcp" # Socks5
+      - "0.0.0.0:1080:1080/udp" # Socks5
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./wg0.conf:/gluetun/wireguard/wg0.conf
+    restart: unless-stopped
+
+  gluetun-socks5:
+    image: serjs/go-socks5-proxy
+    container_name: gluetun-socks5
+    depends_on:
+      - gluetun
+    environment:
+      - REQUIRE_AUTH=false
+    network_mode: "service:gluetun"
+    restart: unless-stopped

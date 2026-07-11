@@ -1,0 +1,7 @@
+install:
+  name: gluetun
+  location: /opt
+  root: true
+  files:
+    - compose.yml
+    - wg0.conf
