@@ -6,7 +6,8 @@ services:
       - "0.0.0.0:4001:3000/tcp"
     environment:
       - BASE_URL=https://YOUR_PUBLIC_AIO_HOSTNAME
-      - ADDON_PASSWORD=password
+      - AIOSTREAMS_AUTH_REQUIRED=true
+      - AIOSTREAMS_AUTH=username:password
       - ADDON_PROXY=http://host.docker.internal:8888
       - SECRET_KEY=0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef # change me
       - REGEX_FILTER_ACCESS=all
