@@ -1,0 +1,17 @@
+https://lumiere.e-mini.internal {
+    tls /certs/lumiere.e-mini.internal.crt /certs/lumiere.e-mini.internal.key {
+		on_demand
+	}
+
+    header Access-Control-Allow-Origin *
+    header Access-Control-Allow-Methods *
+    header Access-Control-Allow-Headers *
+    header Access-Control-Expose-Headers *
+
+    @options method OPTIONS
+    handle @options {
+        respond 204
+    }
+
+    reverse_proxy http://host.docker.internal:24601
+}
