@@ -2,5 +2,7 @@ install:
   name: registry
   location: /opt
   root: true
+  volumes:
+    - registry-data
   files:
     - compose.yml
