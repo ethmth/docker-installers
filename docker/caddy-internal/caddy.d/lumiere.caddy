@@ -11,5 +11,5 @@ https://lumiere.YOURDOMAIN.COM {
         respond 204
     }
 
-    reverse_proxy http://host.docker.internal:24601
+    reverse_proxy http://host.docker.internal:32601
 }
