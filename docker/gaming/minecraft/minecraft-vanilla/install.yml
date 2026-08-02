@@ -1,0 +1,12 @@
+install:
+  name: minecraft-vanilla
+  location: $HOME
+  root: false
+  autostart: true
+  volumes:
+    - data
+  files:
+    - compose.yml
+  messages:
+    - "Minecraft Vanilla installation was successful"
+    - "Now do whatever this normal script says"

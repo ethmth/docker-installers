@@ -1,0 +1,18 @@
+services:
+  minecraft-vanilla:
+    image: itzg/minecraft-server:java25
+    container_name: minecraft-vanilla
+    tty: true
+    stdin_open: true
+    ports:
+      - "25566:25565"
+      - "25576:25575"
+    environment:
+      EULA: "true"
+      RCON_PASSWORD: "password"
+      # Server Settings
+      DUMP_SERVER_PROPERTIES: "true"
+      OVERRIDE_SERVER_PROPERTIES: "false"
+    volumes:
+      - ./data:/data
+    restart: "no"

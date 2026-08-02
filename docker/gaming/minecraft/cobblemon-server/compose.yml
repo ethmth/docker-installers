@@ -24,7 +24,7 @@ services:
 
       # MODRINTH
       MOD_PLATFORM: MODRINTH
-      MODRINTH_MODPACK: https://modrinth.com/modpack/cobblemon-fabric/version/1.7.1
+      MODRINTH_MODPACK: https://modrinth.com/modpack/cobblemon-fabric/version/1.7.3
 
       # Server Settings
       DUMP_SERVER_PROPERTIES: "true"
