@@ -1,5 +1,5 @@
-https://lumiere.e-mini.internal {
-    tls /certs/lumiere.e-mini.internal.crt /certs/lumiere.e-mini.internal.key {
+https://registry.YOURDOMAIN.COM {
+    tls /certs/registry.YOURDOMAIN.COM.crt /certs/registry.YOURDOMAIN.COM.key {
 		on_demand
 	}
 
@@ -13,5 +13,5 @@ https://lumiere.e-mini.internal {
         respond 204
     }
 
-    reverse_proxy http://host.docker.internal:24601
+    reverse_proxy http://host.docker.internal:5000
 }

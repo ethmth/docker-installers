@@ -1,5 +1,5 @@
 install:
-  name: caddy
+  name: caddy-internal
   location: /opt
   root: true
   volumes:
@@ -7,11 +7,14 @@ install:
     - caddy.d
     - caddy_data
     - caddy_config
+    - certs
   files:
     - compose.yml
     - Caddyfile
     - caddy.d
     - html
-    - Dockerfile
+    - create-ca.sh
+    - sign-domain.sh
   messages:
     - "You may need to docker pull caddy:latest manually"
+    - "Run create-ca.sh to create the CA and for each domain, run sign-domain.sh to sign the domain"

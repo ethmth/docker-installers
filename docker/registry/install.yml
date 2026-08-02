@@ -1,0 +1,6 @@
+install:
+  name: registry
+  location: /opt
+  root: true
+  files:
+    - compose.yml

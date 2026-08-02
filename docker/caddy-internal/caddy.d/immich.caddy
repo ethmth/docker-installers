@@ -1,5 +1,5 @@
-https://mm-dev.pc.internal {
-    tls /certs/mm-dev.pc.internal.crt /certs/mm-dev.pc.internal.key {
+https://immich.YOURDOMAIN.COM {
+    tls /certs/immich.YOURDOMAIN.COM.crt /certs/immich.YOURDOMAIN.COM.key {
 		on_demand
 	}
 
@@ -13,5 +13,5 @@ https://mm-dev.pc.internal {
         respond 204
     }
 
-    reverse_proxy http://host.docker.internal:2284
+    reverse_proxy http://host.docker.internal:2283
 }

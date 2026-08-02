@@ -1,0 +1,9 @@
+YOURDOMAIN.COM {
+    tls /certs/YOURDOMAIN.COM.crt /certs/YOURDOMAIN.COM.key {
+		on_demand
+	}
+
+    # Serve static site over HTTPS
+    root * /usr/share/html
+    file_server
+}

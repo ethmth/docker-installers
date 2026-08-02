@@ -1,17 +1,17 @@
 services:
-  caddy:
-    # build: . # uncomment if you want to use the local Dockerfile
+  caddy-internal:
     image: caddy:latest
-    container_name: caddy
+    container_name: caddy-internal
     ports:
       - "80:80"
-      - "444:443"
+      - "443:443"
     volumes:
       - ./html:/usr/share/html
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./caddy.d:/etc/caddy/caddy.d
       - ./caddy_data:/data
       - ./caddy_config:/config
+      - ./certs:/certs:ro
     extra_hosts:
       - "host.docker.internal:host-gateway"
     restart: unless-stopped

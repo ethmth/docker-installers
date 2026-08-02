@@ -1,5 +1,5 @@
-https://immich.pc.internal {
-    tls /certs/immich.pc.internal.crt /certs/immich.pc.internal.key {
+https://lumiere.YOURDOMAIN.COM {
+    tls /certs/lumiere.YOURDOMAIN.COM.crt /certs/lumiere.YOURDOMAIN.COM.key {
 		on_demand
 	}
 
@@ -13,5 +13,5 @@ https://immich.pc.internal {
         respond 204
     }
 
-    reverse_proxy http://host.docker.internal:2283
+    reverse_proxy http://host.docker.internal:24601
 }

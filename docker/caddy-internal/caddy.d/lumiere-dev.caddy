@@ -1,5 +1,5 @@
-https://lumiere-dev.e-mini.internal {
-    tls /certs/lumiere-dev.e-mini.internal.crt /certs/lumiere-dev.e-mini.internal.key {
+https://lumiere-dev.YOURDOMAIN.COM {
+    tls /certs/lumiere-dev.YOURDOMAIN.COM.crt /certs/lumiere-dev.YOURDOMAIN.COM.key {
 		on_demand
 	}
 
