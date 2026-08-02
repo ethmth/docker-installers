@@ -14,5 +14,7 @@ install:
     - caddy.d
     - html
     - Dockerfile
+    - create-ca.sh
+    - sign-domain.sh
   messages:
     - "You may need to docker pull caddy:latest manually"
