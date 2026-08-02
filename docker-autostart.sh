@@ -9,7 +9,7 @@ TIME_RESET=86400 # One Day
 
 # The location where docker programs get installed for this user
 # (the location to check for compose projects)
-LOC="$HOME/docker"
+LOC="$HOME"
 
 # The name of the autostart flag file
 AUTOSTART_FLAG_FILE_NAME=".autostart"
