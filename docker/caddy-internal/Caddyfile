@@ -2,12 +2,10 @@
 
 ## Local Configs
 ## If you're enabling local configs, be sure to add the certs to the certs volume.
-# import /etc/caddy/caddy.d/internal/immich.caddy
-# import /etc/caddy/caddy.d/internal/magic-mich.caddy
-# import /etc/caddy/caddy.d/internal/magic-mich-dev.caddy
-# import /etc/caddy/caddy.d/internal/dev.caddy
+# import /etc/caddy/caddy.d/immich.caddy
 
 ## Mini Local Configs
 ## If you're enabling local configs, be sure to add the certs to the certs volume.
-# import /etc/caddy/caddy.d/internal/e-mini/lumiere.caddy
-# import /etc/caddy/caddy.d/internal/e-mini/lumiere-dev.caddy
+# import /etc/caddy/caddy.d/lumiere.caddy
+# import /etc/caddy/caddy.d/lumiere-dev.caddy
+# import /etc/caddy/caddy.d/registry.caddy
