@@ -1,7 +1,5 @@
 https://registry.YOURDOMAIN.COM {
-    tls /certs/registry.YOURDOMAIN.COM.crt /certs/registry.YOURDOMAIN.COM.key {
-		on_demand
-	}
+    tls /certs/registry.YOURDOMAIN.COM.crt /certs/registry.YOURDOMAIN.COM.key
 
     header Access-Control-Allow-Origin *
     header Access-Control-Allow-Methods *

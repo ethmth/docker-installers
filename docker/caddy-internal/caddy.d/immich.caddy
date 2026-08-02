@@ -1,7 +1,5 @@
 https://immich.YOURDOMAIN.COM {
-    tls /certs/immich.YOURDOMAIN.COM.crt /certs/immich.YOURDOMAIN.COM.key {
-		on_demand
-	}
+    tls /certs/immich.YOURDOMAIN.COM.crt /certs/immich.YOURDOMAIN.COM.key
 
     header Access-Control-Allow-Origin *
     header Access-Control-Allow-Methods *
